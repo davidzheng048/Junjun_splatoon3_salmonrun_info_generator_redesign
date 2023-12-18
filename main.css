@@ -4,19 +4,22 @@
     font-weight: normal;
     src: url("fonts/DFP_GBZY7.otf") format("opentype");
 }
+/* 主要使用的字体 */
 
 :root {
     --label-background-color: #DFFF00;
 }
+/* “当前”和“之后”标签，以及旁边ribbon的颜色 */
 
 body {
     min-height:100vh;
     background: url('imgs/background_img/monsters-transparent-bg.png');
     background-size:cover;
     box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, 0.87);
-
+    /* 使用了背景图片，暂时没法做到原图里的效果，就加了一层0.87透明度的阴影 */
     color: #fff;
     font-family: 'DFPZongYiW7-GB';
+    /* 整体是用DFPZongYiW7-GB的字体，但详细信息里的字体尤其数字略有不同 */
     margin:0;
 }
 
@@ -30,6 +33,7 @@ body {
 h1 {
     margin: 10px 50px auto;
     font-size: 2.5rem;
+    /* Splatoon打工日程的部分 */
 }
 
 .label {
@@ -42,15 +46,15 @@ h1 {
     justify-content: center;
     position: relative;
     left: calc(-50% + 50px);
+    /* 先让标签中心处于左端，然后往右移动50px，有点简单粗暴的微调 */
     color: #000;
-    z-index:1;
 }
 
 .label p {
-    display: inline-block;
-    font-size: 1em;
-    padding: 0.5em;
+    font-size: 1rem;
+    padding: 0.5rem;
     z-index:1;
+    /* z-index保证不被ribbon覆盖 */
 }
 
 .label::before {
@@ -61,7 +65,9 @@ h1 {
     height: 8px;
     width: 100%;
     transform: translateX(-35%);
+    /* 也是比较简单粗暴的微调 */
     z-index: 0;
+    /* z-index保证ribbon不覆盖标签 */
 }
 
 body::before {
@@ -73,6 +79,7 @@ body::before {
     min-height: 100%;
     width: 7px;
     z-index: 0;
+    /* 这里是亮黄色竖着的这条ribbon，目前小屏幕下显示可能有些问题 */
 }
 
 .footer {
@@ -80,4 +87,5 @@ body::before {
     margin-right: 10px;
     margin-left: auto;
     margin-bottom: 5px;
+    /* "菌菌为您呈现"的部分 */
 }

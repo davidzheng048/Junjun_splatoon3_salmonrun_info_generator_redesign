@@ -5,19 +5,13 @@
     src: url("fonts/BlitzMain.otf") format("opentype");
 }
 
-@font-face {
-    font-family: 'DFPZongYiW7-GB';
-    font-style: normal;
-    font-weight: normal;
-    src: url("fonts/DFP_GBZY7.otf") format("opentype");
-}
+/* 引用的第二个字体，因为原版打工时间用的是这个 */
 
 .card {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    border-radius: 10px;
     margin: 15px;
 }
 
@@ -27,6 +21,7 @@
     justify-content: center;
     flex-direction: row;
     background-color: #fff;
+    /* 具体日程信息的背景色，目前是纯白色 */
     padding: 8px 8px;
     
 }
@@ -34,6 +29,7 @@
 .current-shift .shift {
     border-radius: 10px;
 }
+/* 把当前工的边角弄圆 */
 
 .shifts-after .shift:first-child {
     border-radius: 20px 20px 0 0;
@@ -42,12 +38,14 @@
 .shifts-after .shift:last-child {
     border-radius: 0 0 20px 20px;
 }
+/* 把第一个和最后一个“之后”的工的边角磨圆 */
 
 .shifts-after .shift:nth-child(1), 
 .shifts-after .shift:nth-child(2), 
 .shifts-after .shift:nth-child(3) {
     border-bottom: solid #DCDCDC;
 } 
+/* 给“之后”部分里，前三期加一个底部的灰色边界 */
 
 .shift-map {
     display: flex;
@@ -68,13 +66,17 @@
     bottom: 0;
     left: 50%;
     transform: translate(-50%, 120%);
+    /* 移动地图名称的位置到图片底部 */
     border-radius: 5px;
     white-space: nowrap;
+    /* 保证地图名不换行 */
 }
 
 .shift-info {
     color: #000;
     font-family: 'BlitzMain', 'DFPZongYiW7-GB';
+    /* 优先使用BlitzMain字体，因为时间上会用到 */
+    /* 如果是简中，因为没有字体就会用后一种 */
     display: flex;
     flex-direction: column;
 }
@@ -88,7 +90,6 @@
 
 .shift-time p {
     margin: 0;
-    display: inline-block;
 }
 
 .shift-time .dummy {
@@ -99,16 +100,17 @@
 .shift-weapons img {
     max-width: 55px;
     max-height: 55px;
+    /* 打工武器列表图片的宽高 */
 }
 
 .shift-weapons {
     padding: 4px;
     margin-top: -20px;
+    /* 这里因为没搞明白的原因，不多做修改的话这部分的高度会撑得很大，就摁改微调了 */
 }
 
 .shift-weapons p {
     margin: 0;
-    display: inline;
 }
 
 .weapon-list {
