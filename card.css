@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'BlitzMain';
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/BlitzMain.otf") format("opentype");
+}
+
+@font-face {
+    font-family: 'DFPZongYiW7-GB';
+    font-style: normal;
+    font-weight: normal;
+    src: url("fonts/DFP_GBZY7.otf") format("opentype");
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 10px;
+    margin: 15px;
+}
+
+.shift {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: #fff;
+    padding: 8px 8px;
+    
+}
+
+.current-shift .shift {
+    border-radius: 10px;
+}
+
+.shifts-after .shift:first-child {
+    border-radius: 20px 20px 0 0;
+}
+
+.shifts-after .shift:last-child {
+    border-radius: 0 0 20px 20px;
+}
+
+.shifts-after .shift:nth-child(1), 
+.shifts-after .shift:nth-child(2), 
+.shifts-after .shift:nth-child(3) {
+    border-bottom: solid #DCDCDC;
+} 
+
+.shift-map {
+    display: flex;
+    position: relative;
+}
+
+.shift-map img {
+    max-width: 180px;
+    border-radius: 20px;
+}
+
+.shift-map p {
+    background-color: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 2px;
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 120%);
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
+.shift-info {
+    color: #000;
+    font-family: 'BlitzMain', 'DFPZongYiW7-GB';
+    display: flex;
+    flex-direction: column;
+}
+
+.shift-time {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 4px;
+}
+
+.shift-time p {
+    margin: 0;
+    display: inline-block;
+}
+
+.shift-time .dummy {
+    max-width: 1.5rem;
+    max-height: 1.5rem;
+}
+
+.shift-weapons img {
+    max-width: 55px;
+    max-height: 55px;
+}
+
+.shift-weapons {
+    padding: 4px;
+    margin-top: -20px;
+}
+
+.shift-weapons p {
+    margin: 0;
+    display: inline;
+}
+
+.weapon-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
